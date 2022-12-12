@@ -15,20 +15,20 @@ public class Service {
     public void addTask(Integer taskType, String taskName, String description, LocalDate date, LocalTime time,
                         String repeatTask) {
         id = count++;
-        if (taskType == 2) {
-            personalTask = new PersonalTask(taskName, description, date, time, repeatTask, id);
-            taskMap.put(personalTask.getId(), personalTask);
-            System.out.println("Задача добавлена " + taskMap.get(personalTask.getId()));
-        } else {
+        if (taskType == 1) {
             workTask = new WorkTask(taskName, description, date, time, repeatTask, id);
             taskMap.put(workTask.getId(), workTask);
             System.out.println("Задача добавлена " + taskMap.get(workTask.getId()));
+        } else {
+            personalTask = new PersonalTask(taskName, description, date, time, repeatTask, id);
+            taskMap.put(personalTask.getId(), personalTask);
+            System.out.println("Задача добавлена " + taskMap.get(personalTask.getId()));
         }
     }
 
     public void getDateRepeatTask(LocalDate localDate) {
         for (Task task : taskMap.values()) {
-            if (taskMap.values().iterator().next().getDate().equals(localDate)) {
+            if (task.getDate().equals(localDate)) {
                 if (task.getRepeatTask().equals(" однократная ")) {
                     System.out.println(task);
                 }

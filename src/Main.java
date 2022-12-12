@@ -64,7 +64,7 @@ public class Main {
             System.out.print("Введите время задачи в формате ЧЧ:мм: ");
             String taskTime = scanner.next();
             LocalTime time = readTime(taskTime);
-            System.out.print("1.Одновременная задача\n2.Ежедневная задача\n3.Еженедельная задача\n4.Ежемесячная задача\n5.Ежегодная задача\nВведите повторяемость задачи: ");
+            System.out.print("1.Однократная задача\n2.Ежедневная задача\n3.Еженедельная задача\n4.Ежемесячная задача\n5.Ежегодная задача\nВведите повторяемость задачи: ");
             String repeatTask = readRepeatTask(scanner.next());
             Service taskService = new Service();
             taskService.addTask(taskType, taskName, description, date, time, repeatTask);
