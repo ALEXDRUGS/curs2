@@ -50,8 +50,10 @@ public class Service {
     }
 
     public void deleteTask(Integer id) {
-        taskMap.remove(id, taskMap.get(id));
-        System.out.println("Задача успешно удалена");
+        if (taskMap.containsKey(id)) {
+            taskMap.remove(id, taskMap.get(id));
+            System.out.println("Задача успешно удалена");
+        }else System.out.println("Задачи с таким id нет");
     }
 
     @Override
