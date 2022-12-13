@@ -44,7 +44,6 @@ public class Service {
                 if (task.getRepeatTask().equals(" ежегодная ")) {
                     System.out.println(task + " Следующая дата задачи: " + localDate.plusYears(1));
                 }
-
             }
         }
     }
